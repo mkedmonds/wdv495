@@ -22,7 +22,7 @@ CacheStorageProto.match = function(request, params) {
 CacheStorageProto.get = function(name) {
   return this.has(name).then(function(hasCache) {
     var cache;
-    
+
     if (hasCache) {
       return this._vendCache(name);
     }
@@ -57,6 +57,8 @@ CacheStorageProto.keys = function() {
 };
 
 self.CacheStorage = CacheStorage;
-self.caches = new CacheStorage();
+
+// FIXME: Recent Blink self.caches isn't amenable to being overwritten.
+self.polyfillCaches = new CacheStorage();
 
 })();
