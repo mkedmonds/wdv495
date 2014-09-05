@@ -1,4 +1,6 @@
-var cacheDB = require('./cachedb');
+(function() {
+
+var cacheDB = self.cacheDB;
 
 function castToRequest(request) {
   if (!(request instanceof Request)) {
@@ -65,4 +67,6 @@ CacheProto.keys = function(request, params) {
   }
 };
 
-module.exports = Cache;
+self.Cache = Cache;
+
+})();

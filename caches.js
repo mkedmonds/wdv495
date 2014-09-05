@@ -1,5 +1,6 @@
-var cacheDB = require('./cachedb');
-var Cache = require('./cache');
+(function() {
+
+var cacheDB = self.cacheDB;
 
 function CacheStorage() {
   this._origin = location.origin;
@@ -55,4 +56,7 @@ CacheStorageProto.keys = function() {
   }.bind(this));
 };
 
-module.exports = new CacheStorage();
+self.CacheStorage = CacheStorage;
+self.caches = new CacheStorage();
+
+})();

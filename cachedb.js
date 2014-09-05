@@ -1,4 +1,4 @@
-var IDBHelper = require('./idbhelper');
+(function() {
 
 function matchesVary(request, entryRequest, entryResponse) {
   if (!entryResponse.headers.vary) {
@@ -395,4 +395,6 @@ CacheDBProto.put = function(origin, cacheName, items) {
   });
 };
 
-module.exports = new CacheDB();
+self.cacheDB = new CacheDB();
+
+})();
