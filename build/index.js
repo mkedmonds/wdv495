@@ -1,0 +1,1 @@
+self.cachesPolyfill = require('../lib/caches.js');
