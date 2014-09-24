@@ -1,6 +1,6 @@
 # ServiceWorker cache polyfill
 
-This is a polyfill for the ServiceWorker cache API
+This is a polyfill for the [ServiceWorker cache API](http://slightlyoff.github.io/ServiceWorker/spec/service_worker/#cache-storage-interface).
 
 ## Usage
 
