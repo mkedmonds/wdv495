@@ -12,9 +12,7 @@ importScripts('serviceworker-cache-polyfill.js');
 // example usage:
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    cachesPolyfill.get('demo-cache').then(function(cache) {
-      return cache || cachesPolyfill.create('demo-cache');
-    }).then(function(cache) {
+    cachesPolyfill.open('demo-cache').then(function(cache) {
       return cache.put('/', new Response("From the cache!"));
     })
   );
