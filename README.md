@@ -12,7 +12,7 @@ importScripts('serviceworker-cache-polyfill.js');
 // example usage:
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    cachesPolyfill.open('demo-cache').then(function(cache) {
+    caches.open('demo-cache').then(function(cache) {
       return cache.put('/', new Response("From the cache!"));
     })
   );
@@ -20,11 +20,9 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    cachesPolyfill.match(event.request).then(function(response) {
+    caches.match(event.request).then(function(response) {
       return response || new Response("Nothing in the cache for this request");
     })
   );
 });
 ```
-
-Note that your entry point to the API is `cachesPolyfill` rather than `caches` - Chrome has a partial implementation of the latter that cannot be overwritten.

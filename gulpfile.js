@@ -1,15 +1,8 @@
-var browserify = require('browserify');
 var gulp = require('gulp');
-var source = require('vinyl-source-stream');
+var concat = require('gulp-concat');
 
 gulp.task('default', function() {
-  var bundler = browserify({
-    entries: ['./build/index.js'],
-    debug: true
-  });
-
-  return bundler
-    .bundle()
-    .pipe(source('serviceworker-cache-polyfill.js'))
+  return gulp.src('./lib/caches.js')
+    .pipe(concat('serviceworker-cache-polyfill.js'))
     .pipe(gulp.dest('./dist/'));
 });
