@@ -59,25 +59,3 @@ if (!Cache.prototype.addAll) {
     });
   };
 }
-
-if (!CacheStorage.prototype.match) {
-  // This is probably vulnerable to race conditions (removing caches etc)
-  CacheStorage.prototype.match = function match(request, opts) {
-    var caches = this;
-
-    return this.keys().then(function(cacheNames) {
-      var match;
-
-      return cacheNames.reduce(function(chain, cacheName) {
-        return chain.then(function() {
-          return match || caches.open(cacheName).then(function(cache) {
-            return cache.match(request, opts);
-          }).then(function(response) {
-            match = response;
-            return match;
-          });
-        });
-      }, Promise.resolve());
-    });
-  };
-}
