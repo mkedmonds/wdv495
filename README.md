@@ -4,7 +4,7 @@ This is a polyfill for the [ServiceWorker cache API](http://slightlyoff.github.i
 
 ## Usage
 
-Take [serviceworker-cache-polyfill.js](https://github.com/coonsta/cache-polyfill/blob/master/dist/serviceworker-cache-polyfill.js), then in your ServiceWorker script:
+Take [serviceworker-cache-polyfill.js](https://github.com/coonsta/cache-polyfill/blob/master/index.js), then in your ServiceWorker script:
 
 ```js
 importScripts('serviceworker-cache-polyfill.js');
