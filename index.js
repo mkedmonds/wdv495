@@ -15,12 +15,6 @@
  *
  */
 
-if (!Cache.prototype.add) {
-  Cache.prototype.add = function add(request) {
-    return this.addAll([request]);
-  };
-}
-
 if (!Cache.prototype.addAll) {
   Cache.prototype.addAll = function addAll(requests) {
     var cache = this;
