@@ -1,6 +1,6 @@
 # ServiceWorker cache polyfill
 
-This is a polyfill for the [ServiceWorker cache API](http://slightlyoff.github.io/ServiceWorker/spec/service_worker/#cache-storage-interface).
+[Obsolete](https://github.com/coonsta/cache-polyfill/issues/17#issuecomment-158628413) polyfill for the [ServiceWorker cache API](http://slightlyoff.github.io/ServiceWorker/spec/service_worker/#cache-storage-interface). Chrome 46 and Opera 33 support `addAll` now.
 
 ## Usage
 
