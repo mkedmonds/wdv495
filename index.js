@@ -15,7 +15,25 @@
  *
  */
 
-if (!Cache.prototype.addAll) {
+(function() {
+  var nativeAddAll = Cache.prototype.addAll;
+  var userAgent = navigator.userAgent.match(/(Firefox|Chrome)\/(\d+\.)/);
+
+  // Has nice behavior of `var` which everyone hates
+  if (userAgent) {
+    var agent = userAgent[1];
+    var version = parseInt(userAgent[2]);
+  }
+
+  if (
+    nativeAddAll && (!userAgent ||
+      (agent === 'Firefox' && version >= 46) ||
+      (agent === 'Chrome'  && version >= 50)
+    )
+  ) {
+    return;
+  }
+
   Cache.prototype.addAll = function addAll(requests) {
     var cache = this;
 
@@ -25,6 +43,7 @@ if (!Cache.prototype.addAll) {
       this.code = 19;
       this.message = message;
     }
+
     NetworkError.prototype = Object.create(Error.prototype);
 
     return Promise.resolve().then(function() {
@@ -62,6 +81,10 @@ if (!Cache.prototype.addAll) {
       // (don't think this is possible to polyfill due to opaque responses)
       return Promise.all(
         responses.map(function(response, i) {
+          if (!response.ok) {
+            throw new NetworkError('Incorrect response status');
+          }
+
           return cache.put(requests[i], response);
         })
       );
@@ -69,4 +92,12 @@ if (!Cache.prototype.addAll) {
       return undefined;
     });
   };
-}
+
+  // Has native addAll(), but it has to be fixed anyway.
+  // So add() has to be fixed too
+  if (nativeAddAll) {
+    Cache.prototype.add = function add(request) {
+      return this.addAll([request]);
+    };
+  }
+}());
