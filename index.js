@@ -77,14 +77,18 @@
         })
       );
     }).then(function(responses) {
+      // If some of the responses has not OK-eish status,
+      // then whole operation should reject
+      if (responses.some(function(response) {
+        return !response.ok;
+      })) {
+        throw new NetworkError('Incorrect response status');
+      }
+
       // TODO: check that requests don't overwrite one another
       // (don't think this is possible to polyfill due to opaque responses)
       return Promise.all(
         responses.map(function(response, i) {
-          if (!response.ok) {
-            throw new NetworkError('Incorrect response status');
-          }
-
           return cache.put(requests[i], response);
         })
       );
