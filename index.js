@@ -97,11 +97,7 @@
     });
   };
 
-  // Has native addAll(), but it has to be fixed anyway.
-  // So add() has to be fixed too
-  if (nativeAddAll) {
-    Cache.prototype.add = function add(request) {
-      return this.addAll([request]);
-    };
-  }
+  Cache.prototype.add = function add(request) {
+    return this.addAll([request]);
+  };
 }());
