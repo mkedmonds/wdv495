@@ -1,0 +1,28 @@
+2020 Design Trends
+    mobile/responsive layouts
+    animations and moving graphics to catch customers attention
+    Assymetical layouts
+    bright colors
+    Gradients
+    having a template and filling in the information dpending on the page(AJAX)    
+    Unique Typography/ type-only webpages
+    illustations/hand-drawn designs
+    Grid layouts
+    WHITESPACE
+    Geomtic shapes and patterns
+    "Dark mode"
+    Personalization
+    3D modeling
+    Data Visualization
+    Emotional - evoke emotions
+    Header Videos
+
+2020 Tech Trends
+    Go 
+    AI Tech
+    5G
+    Smart devices(connecting devices to mobile devices)
+    block chain
+    Fast Load speeds
+    Voice Recognition
+    Digital Doubles
