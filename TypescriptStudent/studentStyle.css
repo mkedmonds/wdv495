@@ -1,0 +1,33 @@
+.studentCard	{
+    width:350px;
+    box-sizing:border-box;
+    border-radius: 45px;
+    background-image:linear-gradient(#FF981B,#FFC60F);
+    padding:10px;
+    border: 2px solid #E8660E;
+    box-shadow: 5px 5px 2px grey;
+    text-align: center;
+    margin-bottom: 10px;		
+}
+
+.studentCard ul {
+    padding-left:0px;
+    font-size:20px;
+    color:#402607;
+}
+
+.studentCard h3	{
+    margin:0px;	
+    color:#402607;
+    font-size: 35px;
+}
+
+.studentCard li{
+    list-style: none;
+}
+
+.studentCard p {
+    font-weight: bold;
+    color: #594225;
+    font-size:25px;
+}
