@@ -1,0 +1,123 @@
+body {
+    font-family: sans-serif;
+    background-color: #7393A0;
+  }
+  
+  /* Make content area fill the entire browser window */
+  html,
+  .fullscreen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  /* Center the content in the browser window */
+  .container {
+    margin: 0px auto 0px auto;
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+
+.contact{
+  font-style: italic;
+  text-align: center;
+}
+
+.nav{
+    font-size: 25px;
+    display: none;
+    text-align: center;
+ }
+
+ .regNav{
+  font-size: 25px;
+   display: inline;
+   text-align: center;
+ }
+
+.showBurg{
+  display: none;
+}
+
+.burgBackground{
+  background-color: #253237;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 45px;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #253237;
+}
+
+li {
+  display: inline;
+  /* padding: 5px; */
+  /* margin-left: 25px; */
+}
+
+li a {
+  /* display: block; */
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #253237;
+}
+
+button{
+  border-radius: 9px;
+  font-size:20px;
+}
+
+@media only screen and (max-width:480px){
+  .container{
+    /* margin: auto auto; */
+    padding: 0px;
+    width: 90%;
+  }
+
+  .regNav{
+    display: none;
+  }
+  .nav{
+    /* width: 100%; */
+    display: none;
+    /* display: flex;
+    justify-content: stretch; */
+  }
+
+  .showBurg{
+    display: inline;
+  }
+  .burgBackground{
+    text-align: left;
+  }
+
+  li {
+    display: block;
+    font-size: 35px;
+    border-bottom: 2px solid #4F6A76;
+  }
+
+  p img{
+    width: 100%
+  }
+} 
