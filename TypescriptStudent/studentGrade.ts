@@ -1,12 +1,17 @@
 function studentGrade(greeting:string) {
 
-    return "Hello" + greeting;
+    return "Hello " + greeting;
 
 }
 
-let opening = "noodle";
+let opening = "WDV495 Class";
 
 console.log(studentGrade(opening));
+
+let result = studentGrade(opening);
+
+console.log(result);
+
 
 const records = [
 	{

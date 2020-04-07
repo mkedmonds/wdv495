@@ -1,8 +1,10 @@
 function studentGrade(greeting) {
-    return "Hello" + greeting;
+    return "Hello " + greeting;
 }
-var opening = "noodle";
+var opening = "WDV495 Class";
 console.log(studentGrade(opening));
+var result = studentGrade(opening);
+console.log(result);
 var records = [
     {
         student_id: 332443,

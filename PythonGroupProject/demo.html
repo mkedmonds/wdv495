@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <script>
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <h1>TESTING</h1>
+
+    <P id="demo"></P>
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+
+        function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "readJson.py", true);
+        xhttp.send();
+        document.getElementById("demo").innerHTML = xhttp.responseText;
+        }
+
+    </script>
+
+</body>
+</html>

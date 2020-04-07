@@ -1,0 +1,27 @@
+{
+    "Student" :[
+        
+        {            
+            "student_major": "Web Development",
+
+            "student_id":332443,
+
+            "student_gpa":3.6,
+
+            "student_courses":["WDV101","WDV131","WDV105"]
+        },
+        {
+            "student_major": "Computer Science",
+            "student_id": 125365,
+            "student_gpa": 4.0,
+            "student_courses":["CIS101", "CIS365", "CIS215"]
+        },
+        {
+            "student_major": "Art History",
+            "student_id": 965874,
+            "student_gpa": 2.5,
+            "student_courses":["ART521", "ART107", "SCI171"]
+        }
+        
+    ]
+}
