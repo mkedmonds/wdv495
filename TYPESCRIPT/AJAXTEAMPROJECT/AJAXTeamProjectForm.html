@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cupcakes and Candy</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+
+    let cupcakeOptions = ["Vanilla", "Chocolate", "Red Velvet"];
+
+    let candyOptions = ["Laffy Taffy", "Twix", "Candy Corn"];
+
+  
+    $(document).ready(function() {
+      //alert("JQUERY WORKING");
+
+      $("#changeCupcakes").click(function() {
+
+        $("#select").empty();
+        $("#cupcakeDescription").html("");
+        $("#cupcakePrice").html("");
+        $("#cupcakeImage").html("");
+        
+        for (let i = 0; i < cupcakeOptions.length; i++) {
+          $("#select").append(new Option(cupcakeOptions[i], cupcakeOptions[i]));
+          
+        }
+
+        $("#select").change(function() {
+          let inChoice = $("#select").val();
+          
+          $.ajax({url: "cupcakeProject.php", success:function(cupcake){
+
+            let resultCupcake = JSON.parse(cupcake);
+
+            $("#cupcakeDescription").html("");
+            $("#cupcakePrice").html("");
+            $("#cupcakeImage").html("");
+
+
+            if (inChoice == "Vanilla") {
+              //alert("VANILLA");
+
+              $("#cupcakeDescription").html(resultCupcake.vanilla.cupcake_description);
+              $("#cupcakePrice").html(resultCupcake.vanilla.cupcake_price);
+              $("#cupcakeImage").html("<img src='" + resultCupcake.vanilla.cupcake_img + "' width=500px >" );
+
+            } 
+            else {
+              if (inChoice == "Chocolate") {
+                //alert("Chocolate");
+
+                $("#cupcakeDescription").html(resultCupcake.chocolate.cupcake_description);
+                $("#cupcakePrice").html(resultCupcake.chocolate.cupcake_price);
+                $("#cupcakeImage").html("<img src='" + resultCupcake.chocolate.cupcake_img + "' width=500px >" );
+              } 
+              else {
+                if (inChoice == "Red Velvet") {
+                  //alert("RED VELVET");
+
+                  $("#cupcakeDescription").html(resultCupcake.redVelvet.cupcake_description);
+                  $("#cupcakePrice").html(resultCupcake.redVelvet.cupcake_price);
+                  $("#cupcakeImage").html("<img src='" + resultCupcake.redVelvet.cupcake_img + "' width=500px >" );
+                }
+              }
+            }
+
+
+
+          }});
+
+
+          
+
+        });
+      
+        
+
+      });
+      
+
+
+      $("#changeCandy").click(function() {
+
+        $("#select").empty();
+
+        $("#cupcakeDescription").html("");
+        $("#cupcakePrice").html("");
+        $("#cupcakeImage").html("");
+
+        for (let x = 0; x < candyOptions.length; x++) {
+          $("#select").append(new Option(candyOptions[x], candyOptions[x]));
+          
+        }
+
+
+
+        $("#select").change(function() {
+
+          let inChoice = $("#select").val();
+          
+          $.ajax({url: "candyProject.php", success:function(candy){
+
+            let resultCandy = JSON.parse(candy);
+
+            $("#cupcakeDescription").html("");
+            $("#cupcakePrice").html("");
+            $("#cupcakeImage").html("");
+
+
+            if (inChoice == "Laffy Taffy") {
+              //alert("LAFFY TAFFY");
+
+              $("#cupcakeDescription").html(resultCandy.laffyTaffy.candy_description);
+              $("#cupcakePrice").html(resultCandy.laffyTaffy.candy_price);
+              $("#cupcakeImage").html("<img src='" + resultCandy.laffyTaffy.candy_img + "' width=500px >" );
+
+            } 
+            else {
+              if (inChoice == "Twix") {
+                //alert("TWIX");
+
+                $("#cupcakeDescription").html(resultCandy.twix.candy_description);
+                $("#cupcakePrice").html(resultCandy.twix.candy_price);
+                $("#cupcakeImage").html("<img src='" + resultCandy.twix.candy_img + "' width=500px >" ); 
+              } 
+              else {
+                if (inChoice == "Candy Corn") {
+                  //alert("CANDY CORN");
+
+                  $("#cupcakeDescription").html(resultCandy.candyCorn.candy_description);
+                  $("#cupcakePrice").html(resultCandy.candyCorn.candy_price);
+                  $("#cupcakeImage").html("<img src='" + resultCandy.candyCorn.candy_img + "' width=500px >" );
+                }
+              }
+            }
+
+
+
+          }});
+
+
+          
+
+        });
+
+
+
+      });
+
+
+      
+    });
+  
+  </script>
+
+<style type="text/css">
+  .bold {
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+<h1>WDV321 Advanced Javascript</h1>
+<h2>AJAX Team Project</h2>
+<h3>Team Members: Faith, Tori, Madeline</h3>
+<p>&nbsp;</p>
+
+<p>
+  <button id=changeCupcakes>Change to Cupcakes</button>
+    <button id="changeCandy">Change to candy</button>
+</p>
+
+<form name="form1" method="post" action="">
+  <h2>TRICK OR TREAT!!!</h2>
+  <p>Make your choice: 
+    <label>
+      <select name="select" id="select">
+        <!-- <option value="van">Vanilla Cupcake</option>
+        <option value="choc">Chocolate Cupcake</option>
+        <option value="red">Red Velvet Cupcake</option> -->
+      </select>
+    </label>
+  </p>
+  <p>Description: <span id="cupcakeDescription"></span> </p>
+  <p>Price: <span id="cupcakePrice"></span></p>
+  <p><span id="cupcakeImage"></span></p>
+  <p>
+    <input type="submit" name="button" id="button" value="Submit">
+    
+  </p>
+</form>
+<p class="bold">Extra Credit:</p>
+<p>Use an Ajax call to dynamically change the select to a choice of candy instead of cupcakes. Include the appropriate server side information. </p>
+</body>
+</html>

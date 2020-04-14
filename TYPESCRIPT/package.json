@@ -1,0 +1,32 @@
+{
+  "name": "testfile",
+  "version": "1.0.0",
+  "description": "A testing file",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkedmonds/wdv495.git"
+  },
+  "keywords": [
+    "wdv495",
+    "gulp"
+  ],
+  "author": "Madeline Edmonds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkedmonds/wdv495/issues"
+  },
+  "homepage": "https://github.com/mkedmonds/wdv495#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp-watch-sass": "^1.4.1"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

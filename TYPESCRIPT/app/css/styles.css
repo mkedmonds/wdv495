@@ -1,0 +1,42 @@
+body {
+  background-color: aqua; }
+
+#container {
+  width: 71.42857%;
+  background-color: white;
+  margin: auto auto; }
+
+header {
+  font-size: 45px;
+  padding: 5px;
+  background-color: gray; }
+
+main {
+  padding: 5px;
+  text-align: center; }
+
+nav {
+  text-align: center;
+  background-color: #ff4d94;
+  padding: 2px; }
+
+footer {
+  background: #ffcce0;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffcce0 0%, #330014 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffcce0), color-stop(100%, #330014));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffcce0 0%, #330014 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffcce0 0%, #330014 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffcce0 0%, #330014 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffcce0 0%, #330014 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  padding: 10px;
+  font-weight: bold;
+  text-align: center; }
